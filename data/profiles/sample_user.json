@@ -1,0 +1,31 @@
+{
+  "id": "sample_user",
+  "username": "Sample Player",
+  "skill_level": "Intermediate",
+  "created_at": "2025-05-01T12:00:00Z",
+  "statistics": {
+    "games_analyzed": 5,
+    "puzzles_solved": 25,
+    "accuracy": 68,
+    "strength_areas": [
+      {
+        "concept": "Opening Play",
+        "count": 3
+      },
+      {
+        "concept": "Pawn Structure",
+        "count": 2
+      }
+    ],
+    "weakness_areas": [
+      {
+        "concept": "Tactical Awareness",
+        "count": 4
+      },
+      {
+        "concept": "Endgame Technique",
+        "count": 3
+      }
+    ]
+  }
+}

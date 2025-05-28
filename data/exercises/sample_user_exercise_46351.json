@@ -1,0 +1,16 @@
+{
+  "id": "exercise_46351",
+  "type": "tactical",
+  "concept": "fork",
+  "difficulty": "medium",
+  "position": "r2qkbnr/ppp2ppp/2np4/4p3/2B1P1b1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1",
+  "correct_moves": [
+    "Nxe5"
+  ],
+  "hints": [
+    "Find the knight fork targeting multiple pieces.",
+    "Look for a fork opportunity."
+  ],
+  "target_weakness": "openings",
+  "user_attempts": []
+}

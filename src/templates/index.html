@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Coach - Personalized Chess Training</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-container">
+                <div class="logo">
+                    <img src="/static/img/logo.png" alt="Chess Coach Logo">
+                    <span>Chess Coach</span>
+                </div>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#" data-view="dashboard" class="active">Dashboard</a></li>
+                        <li><a href="#" data-view="analysis">Analysis</a></li>
+                        <li><a href="#" data-view="practice">Practice</a></li>
+                        <li><a href="#" data-view="progress">Progress</a></li>
+                        <li><a href="#" data-view="settings">Settings</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-menu" id="user-menu">
+                    <div class="user-avatar" id="user-avatar">G</div>
+                    <span id="user-name">Guest</span>
+                    <i class="fas fa-chevron-down"></i>
+                    
+                    <div class="user-dropdown hidden" id="user-dropdown">
+                        <ul>
+                            <li><a href="#" data-view="profile">Profile</a></li>
+                            <li><a href="#" data-view="settings">Settings</a></li>
+                            <li><a href="#" id="logout-button">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul class="sidebar-nav">
+                    <li><a href="#" data-view="dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#" data-view="analysis"><i class="fas fa-chess-board"></i> Game Analysis</a></li>
+                    <li><a href="#" data-view="practice"><i class="fas fa-graduation-cap"></i> Practice</a></li>
+                    <li><a href="#" data-view="progress"><i class="fas fa-chart-line"></i> Progress</a></li>
+                    <li><a href="#" data-view="settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+                
+                <div class="sidebar-section">
+                    <h3>Recent Games</h3>
+                    <ul class="sidebar-nav">
+                        <li><a href="#"><i class="fas fa-chess-pawn"></i> vs. Stockfish</a></li>
+                        <li><a href="#"><i class="fas fa-chess-pawn"></i> Tournament Game</a></li>
+                        <li><a href="#"><i class="fas fa-chess-pawn"></i> Practice Match</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Quick Actions</h3>
+                    <ul class="sidebar-nav">
+                        <li><a href="#" data-view="analysis"><i class="fas fa-plus"></i> New Analysis</a></li>
+                        <li><a href="#" data-view="practice"><i class="fas fa-puzzle-piece"></i> Quick Practice</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard View -->
+                <div id="dashboard-view" class="view">
+                    <div class="page-title">
+                        <h1>Welcome to Chess Coach</h1>
+                        <p>Your personalized chess training assistant</p>
+                    </div>
+                    
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <i class="fas fa-chess-board"></i>
+                                <h3>Games Analyzed</h3>
+                            </div>
+                            <div class="stat-card-value" id="stat-games-analyzed">0</div>
+                            <div class="stat-card-description">Total games analyzed by Chess Coach</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <i class="fas fa-puzzle-piece"></i>
+                                <h3>Puzzles Solved</h3>
+                            </div>
+                            <div class="stat-card-value" id="stat-puzzles-solved">0</div>
+                            <div class="stat-card-description">Practice puzzles completed</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <i class="fas fa-bullseye"></i>
+                                <h3>Accuracy</h3>
+                            </div>
+                            <div class="stat-card-value" id="stat-accuracy">0%</div>
+                            <div class="stat-card-description">Average move accuracy</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <i class="fas fa-trophy"></i>
+                                <h3>Skill Level</h3>
+                            </div>
+                            <div class="stat-card-value" id="stat-skill-level">Beginner</div>
+                            <div class="stat-card-description">Current estimated skill level</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h2>Your Chess Profile</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="w-50 mr-3">
+                                    <h3>Strengths</h3>
+                                    <ul id="strengths-list">
+                                        <li>No strengths identified yet</li>
+                                    </ul>
+                                </div>
+                                <div class="w-50">
+                                    <h3>Areas for Improvement</h3>
+                                    <ul id="weaknesses-list">
+                                        <li>No weaknesses identified yet</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h2>Recommended Practice</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="practice-grid">
+                                <div class="practice-card" data-type="tactical">
+                                    <div class="practice-card-icon">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <h3 class="practice-card-title">Tactical Training</h3>
+                                    <p class="practice-card-description">Improve your tactical awareness with puzzles</p>
+                                    <button class="btn">Start Practice</button>
+                                </div>
+                                
+                                <div class="practice-card" data-type="strategic">
+                                    <div class="practice-card-icon">
+                                        <i class="fas fa-chess-board"></i>
+                                    </div>
+                                    <h3 class="practice-card-title">Strategic Planning</h3>
+                                    <p class="practice-card-description">Develop your strategic understanding</p>
+                                    <button class="btn">Start Practice</button>
+                                </div>
+                                
+                                <div class="practice-card" data-type="endgame">
+                                    <div class="practice-card-icon">
+                                        <i class="fas fa-flag-checkered"></i>
+                                    </div>
+                                    <h3 class="practice-card-title">Endgame Technique</h3>
+                                    <p class="practice-card-description">Master essential endgame positions</p>
+                                    <button class="btn">Start Practice</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analysis View -->
+                <div id="analysis-view" class="view hidden">
+                    <div class="page-title">
+                        <h1>Game Analysis</h1>
+                        <p>Upload your games for detailed analysis and personalized feedback</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Upload Game</h2>
+                        </div>
+                        <div class="card-body">
+                            <form id="analysis-form">
+                                <div class="form-group">
+                                    <label for="pgn-input">Enter PGN or game moves:</label>
+                                    <textarea id="pgn-input" class="w-100" rows="5" placeholder="Paste your PGN here or enter moves..."></textarea>
+                                </div>
+                                <div class="form-group text-right">
+                                    <button type="submit" class="btn">Analyze Game</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div id="analysis-container" class="analysis-container mt-4">
+                        <div class="analysis-board">
+                            <div id="chess-board" class="chess-board-container"></div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h3>Analysis Summary</h3>
+                                </div>
+                                <div class="card-body" id="analysis-summary">
+                                    <p>Upload a game to see analysis results.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="analysis-info">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Move List</h3>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div id="move-list" class="move-list">
+                                        <p class="p-3">No moves to display. Upload a game to see the move list.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h3>Position Analysis</h3>
+                                </div>
+                                <div class="card-body" id="position-analysis">
+                                    <p>Select a move to see position analysis.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h3>Strengths Demonstrated</h3>
+                                </div>
+                                <div class="card-body" id="analysis-strengths">
+                                    <p>Upload a game to see your strengths.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h3>Areas for Improvement</h3>
+                                </div>
+                                <div class="card-body" id="analysis-weaknesses">
+                                    <p>Upload a game to see areas for improvement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Practice View -->
+                <div id="practice-view" class="view hidden">
+                    <div class="page-title">
+                        <h1>Practice</h1>
+                        <p>Improve your chess skills with targeted exercises</p>
+                    </div>
+                    
+                    <div id="practice-container">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Practice Categories</h2>
+                            </div>
+                            <div class="card-body">
+                                <div id="practice-grid" class="practice-grid">
+                                    <div class="practice-card" data-type="tactical">
+                                        <div class="practice-card-icon">
+                                            <i class="fas fa-bullseye"></i>
+                                        </div>
+                                        <h3 class="practice-card-title">Tactical Training</h3>
+                                        <p class="practice-card-description">Improve your tactical awareness with puzzles</p>
+                                        <button class="btn">Start Practice</button>
+                                    </div>
+                                    
+                                    <div class="practice-card" data-type="strategic">
+                                        <div class="practice-card-icon">
+                                            <i class="fas fa-chess-board"></i>
+                                        </div>
+                                        <h3 class="practice-card-title">Strategic Planning</h3>
+                                        <p class="practice-card-description">Develop your strategic understanding</p>
+                                        <button class="btn">Start Practice</button>
+                                    </div>
+                                    
+                                    <div class="practice-card" data-type="endgame">
+                                        <div class="practice-card-icon">
+                                            <i class="fas fa-flag-checkered"></i>
+                                        </div>
+                                        <h3 class="practice-card-title">Endgame Technique</h3>
+                                        <p class="practice-card-description">Master essential endgame positions</p>
+                                        <button class="btn">Start Practice</button>
+                                    </div>
+                                    
+                                    <div class="practice-card" data-type="opening">
+                                        <div class="practice-card-icon">
+                                            <i class="fas fa-book-open"></i>
+                                        </div>
+                                        <h3 class="practice-card-title">Opening Repertoire</h3>
+                                        <p class="practice-card-description">Build a solid opening foundation</p>
+                                        <button class="btn">Start Practice</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h2>Recent Practice Sessions</h2>
+                            </div>
+                            <div class="card-body">
+                                <p>You haven't completed any practice sessions yet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Progress View -->
+                <div id="progress-view" class="view hidden">
+                    <div class="page-title">
+                        <h1>Progress Tracking</h1>
+                        <p>Monitor your chess improvement over time</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Accuracy Trend</h3>
+                            <div>
+                                <select id="accuracy-time-range">
+                                    <option value="week">Last Week</option>
+                                    <option value="month" selected>Last Month</option>
+                                    <option value="year">Last Year</option>
+                                    <option value="all">All Time</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-body" id="accuracy-chart">
+                            <p class="text-center">No data available yet. Analyze games to see your accuracy trend.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Skill Development</h3>
+                        </div>
+                        <div class="chart-body" id="skill-chart">
+                            <p class="text-center">No data available yet. Practice more to see your skill development.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Strength Areas</h2>
+                        </div>
+                        <div class="card-body" id="progress-strengths">
+                            <div class="progress-container">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Opening Play</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="progress-container mt-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Tactical Awareness</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="progress-container mt-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Endgame Technique</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h2>Recent Achievements</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="achievement-card">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <h3>Analyst</h3>
+                                    <p>Analyzed 10 games</p>
+                                </div>
+                                
+                                <div class="achievement-card">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-puzzle-piece"></i>
+                                    </div>
+                                    <h3>Puzzle Solver</h3>
+                                    <p>Solved 50 puzzles</p>
+                                </div>
+                                
+                                <div class="achievement-card">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h3>Improver</h3>
+                                    <p>Increased accuracy by 10%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Settings View -->
+                <div id="settings-view" class="view hidden">
+                    <div class="page-title">
+                        <h1>Settings</h1>
+                        <p>Customize your Chess Coach experience</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Profile Settings</h2>
+                        </div>
+                        <div class="card-body">
+                            <form id="profile-form">
+                                <div class="form-group">
+                                    <label for="settings-username">Username</label>
+                                    <input type="text" id="settings-username" class="w-100" value="Guest">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="settings-skill-level">Skill Level</label>
+                                    <select id="settings-skill-level" class="w-100">
+                                        <option value="Beginner">Beginner</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Advanced">Advanced</option>
+                                        <option value="Expert">Expert</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group text-right">
+                                    <button type="submit" class="btn">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h2>Application Settings</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="settings-theme">Theme</label>
+                                <select id="settings-theme" class="w-100">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="settings-board-style">Board Style</label>
+                                <select id="settings-board-style" class="w-100">
+                                    <option value="standard">Standard</option>
+                                    <option value="wood">Wood</option>
+                                    <option value="blue">Blue</option>
+                                    <option value="green">Green</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="settings-piece-style">Piece Style</label>
+                                <select id="settings-piece-style" class="w-100">
+                                    <option value="standard">Standard</option>
+                                    <option value="classic">Classic</option>
+                                    <option value="modern">Modern</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group text-right">
+                                <button id="save-app-settings" class="btn">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h2>Data Management</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h3>Export Data</h3>
+                                    <p>Download all your Chess Coach data</p>
+                                </div>
+                                <button id="export-data" class="btn">Export</button>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h3>Import Data</h3>
+                                    <p>Upload previously exported data</p>
+                                </div>
+                                <button id="import-data" class="btn">Import</button>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h3>Clear Data</h3>
+                                    <p>Delete all your Chess Coach data</p>
+                                </div>
+                                <button id="clear-data" class="btn accent">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container footer-container">
+                <div class="footer-section">
+                    <h3>Chess Coach</h3>
+                    <p>Your personalized chess training assistant that learns your strengths and weaknesses, provides feedback, and helps you improve your game.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-view="dashboard">Dashboard</a></li>
+                        <li><a href="#" data-view="analysis">Game Analysis</a></li>
+                        <li><a href="#" data-view="practice">Practice</a></li>
+                        <li><a href="#" data-view="progress">Progress</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Chess Rules</a></li>
+                        <li><a href="#">Strategy Guide</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="container footer-bottom">
+                <p>&copy; 2025 Chess Coach. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="/static/js/chessboard.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

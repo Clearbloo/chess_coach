@@ -1,0 +1,16 @@
+{
+  "id": "exercise_42020",
+  "type": "tactical",
+  "concept": "pin",
+  "difficulty": "medium",
+  "position": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 1",
+  "correct_moves": [
+    "Bxf7+"
+  ],
+  "hints": [
+    "Create a pin that leads to material gain.",
+    "Look for a pin opportunity."
+  ],
+  "target_weakness": "tactics",
+  "user_attempts": []
+}

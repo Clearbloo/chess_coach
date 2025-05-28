@@ -1,0 +1,24 @@
+{
+  "id": "game2",
+  "pgn": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O 5. Bd3 d5 6. Nf3 c5 7. O-O Nc6 8. a3 Bxc3",
+  "analysis": {
+    "accuracy": 65,
+    "best_moves": 4,
+    "good_moves": 2,
+    "inaccuracies": 2,
+    "mistakes": 1,
+    "blunders": 0
+  },
+  "strengths": [
+    {
+      "concept": "Pawn Structure",
+      "description": "Maintained solid pawn structure throughout"
+    }
+  ],
+  "weaknesses": [
+    {
+      "concept": "Endgame Technique",
+      "description": "Inefficient piece coordination in the middlegame"
+    }
+  ]
+}

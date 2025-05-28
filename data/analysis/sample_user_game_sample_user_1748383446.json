@@ -1,0 +1,337 @@
+{
+  "game_id": "game_sample_user_1748383446",
+  "player_color": "white",
+  "overall_accuracy": 80.0,
+  "move_analysis": [
+    {
+      "move": "e4",
+      "position": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "phase": "opening",
+      "evaluation": 0.0,
+      "accuracy": 80.0,
+      "classification": "Good",
+      "alternative_moves": [
+        {
+          "move": "N/A",
+          "move_uci": "",
+          "score": 0,
+          "rank": 1,
+          "note": "No chess engine available"
+        }
+      ],
+      "concepts": [
+        {
+          "concept": "center_control",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "move": "Nf3",
+      "position": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "phase": "opening",
+      "evaluation": 0.0,
+      "accuracy": 80.0,
+      "classification": "Good",
+      "alternative_moves": [
+        {
+          "move": "N/A",
+          "move_uci": "",
+          "score": 0,
+          "rank": 1,
+          "note": "No chess engine available"
+        }
+      ],
+      "concepts": [
+        {
+          "concept": "development",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "move": "Bb5",
+      "position": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "phase": "opening",
+      "evaluation": 0.0,
+      "accuracy": 80.0,
+      "classification": "Good",
+      "alternative_moves": [
+        {
+          "move": "N/A",
+          "move_uci": "",
+          "score": 0,
+          "rank": 1,
+          "note": "No chess engine available"
+        }
+      ],
+      "concepts": [
+        {
+          "concept": "development",
+          "confidence": 0.8
+        },
+        {
+          "concept": "fork",
+          "confidence": 0.8
+        },
+        {
+          "concept": "pin",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "move": "Ba4",
+      "position": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+      "phase": "opening",
+      "evaluation": 0.0,
+      "accuracy": 80.0,
+      "classification": "Good",
+      "alternative_moves": [
+        {
+          "move": "N/A",
+          "move_uci": "",
+          "score": 0,
+          "rank": 1,
+          "note": "No chess engine available"
+        }
+      ],
+      "concepts": [
+        {
+          "concept": "fork",
+          "confidence": 0.8
+        },
+        {
+          "concept": "pin",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "move": "O-O",
+      "position": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 5",
+      "phase": "opening",
+      "evaluation": 0.0,
+      "accuracy": 80.0,
+      "classification": "Good",
+      "alternative_moves": [
+        {
+          "move": "N/A",
+          "move_uci": "",
+          "score": 0,
+          "rank": 1,
+          "note": "No chess engine available"
+        }
+      ],
+      "concepts": [
+        {
+          "concept": "development",
+          "confidence": 0.8
+        },
+        {
+          "concept": "castling",
+          "confidence": 0.9
+        },
+        {
+          "concept": "fork",
+          "confidence": 0.8
+        },
+        {
+          "concept": "pin",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "move": "Re1",
+      "position": "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 6",
+      "phase": "middlegame",
+      "evaluation": 0.0,
+      "accuracy": 80.0,
+      "classification": "Good",
+      "alternative_moves": [
+        {
+          "move": "N/A",
+          "move_uci": "",
+          "score": 0,
+          "rank": 1,
+          "note": "No chess engine available"
+        }
+      ],
+      "concepts": [
+        {
+          "concept": "fork",
+          "confidence": 0.8
+        },
+        {
+          "concept": "pin",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "move": "Bb3",
+      "position": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/B3P3/5N2/PPPP1PPP/RNBQR1K1 w kq - 0 7",
+      "phase": "middlegame",
+      "evaluation": 0.0,
+      "accuracy": 80.0,
+      "classification": "Good",
+      "alternative_moves": [
+        {
+          "move": "N/A",
+          "move_uci": "",
+          "score": 0,
+          "rank": 1,
+          "note": "No chess engine available"
+        }
+      ],
+      "concepts": [
+        {
+          "concept": "fork",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "move": "c3",
+      "position": "r1bqk2r/2p1bppp/p1np1n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 w kq - 0 8",
+      "phase": "middlegame",
+      "evaluation": 0.0,
+      "accuracy": 80.0,
+      "classification": "Good",
+      "alternative_moves": [
+        {
+          "move": "N/A",
+          "move_uci": "",
+          "score": 0,
+          "rank": 1,
+          "note": "No chess engine available"
+        }
+      ],
+      "concepts": [
+        {
+          "concept": "fork",
+          "confidence": 0.8
+        }
+      ]
+    }
+  ],
+  "phases_analysis": {
+    "opening": {
+      "move_count": 5,
+      "accuracy_sum": 400.0,
+      "best_moves": 0,
+      "good_moves": 5,
+      "inaccuracies": 0,
+      "mistakes": 0,
+      "blunders": 0,
+      "concepts": {
+        "center_control": {
+          "count": 1,
+          "confidence_sum": 0.7
+        },
+        "development": {
+          "count": 3,
+          "confidence_sum": 2.4000000000000004
+        },
+        "fork": {
+          "count": 3,
+          "confidence_sum": 2.4000000000000004
+        },
+        "pin": {
+          "count": 3,
+          "confidence_sum": 2.4000000000000004
+        },
+        "castling": {
+          "count": 1,
+          "confidence_sum": 0.9
+        }
+      }
+    },
+    "middlegame": {
+      "move_count": 3,
+      "accuracy_sum": 240.0,
+      "best_moves": 0,
+      "good_moves": 3,
+      "inaccuracies": 0,
+      "mistakes": 0,
+      "blunders": 0,
+      "concepts": {
+        "fork": {
+          "count": 3,
+          "confidence_sum": 2.4000000000000004
+        },
+        "pin": {
+          "count": 1,
+          "confidence_sum": 0.8
+        }
+      }
+    },
+    "endgame": {}
+  },
+  "tactical_opportunities": [],
+  "strategic_assessments": [],
+  "mistake_patterns": [],
+  "strengths_identified": [
+    {
+      "concept": "opening_play",
+      "confidence": 0.8,
+      "evidence": "Average accuracy of 80.0% in opening",
+      "example": ""
+    },
+    {
+      "concept": "middlegame_play",
+      "confidence": 0.8,
+      "evidence": "Average accuracy of 80.0% in middlegame",
+      "example": ""
+    },
+    {
+      "concept": "development",
+      "confidence": 0.8000000000000002,
+      "evidence": "Demonstrated 3 times with high confidence",
+      "example": ""
+    },
+    {
+      "concept": "fork",
+      "confidence": 0.8000000000000002,
+      "evidence": "Demonstrated 6 times with high confidence",
+      "example": ""
+    },
+    {
+      "concept": "pin",
+      "confidence": 0.8,
+      "evidence": "Demonstrated 4 times with high confidence",
+      "example": ""
+    }
+  ],
+  "weaknesses_identified": [],
+  "improvement_suggestions": [
+    {
+      "concept": "calculation",
+      "priority": "medium",
+      "description": "Improve calculation skills through regular practice",
+      "exercises": [
+        "Calculation training",
+        "Visualization exercises"
+      ]
+    },
+    {
+      "concept": "pattern_recognition",
+      "priority": "medium",
+      "description": "Develop pattern recognition through consistent study",
+      "exercises": [
+        "Common pattern drills",
+        "Position comparison exercises"
+      ]
+    },
+    {
+      "concept": "game_analysis",
+      "priority": "medium",
+      "description": "Regularly analyze your games to identify improvement areas",
+      "exercises": [
+        "Self-analysis routine",
+        "Computer-assisted analysis"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "exercise_50951",
+  "type": "tactical",
+  "concept": "discovered_attack",
+  "difficulty": "easy",
+  "position": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 1",
+  "correct_moves": [
+    "Bxf7+"
+  ],
+  "hints": [
+    "Find the discovered check that wins material.",
+    "Look for a discovered attack opportunity."
+  ],
+  "target_weakness": "openings",
+  "user_attempts": []
+}
